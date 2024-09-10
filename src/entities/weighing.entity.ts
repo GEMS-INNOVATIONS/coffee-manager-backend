@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 import { User } from 'src/entities/user.entity';  // entidad User
-import { PassCoffee } from 'src/entities/pass-coffee.entity';  // entidad PassCoffee
+import { PassCoffee } from 'src/entities/passCoffee.entity';  // entidad PassCoffee
 import { Farm } from 'src/entities/farm.entity';  // entidad Farm
 
 @Entity('Weighings')
