@@ -18,17 +18,35 @@ export class UsersController {
     }
 
     @Get(':id')
-    findOne(@Param('id') id: string) {
-        return this.usersService.findOne(Number(id));
+    findOneById(@Param('id') id: string) {
+        return this.usersService.findOneById(Number(id));
+    }
+
+    // Nueva ruta para buscar por UUID
+    @Get('uuid/:uuid')
+    findOneByUuid(@Param('uuid') uuid: string) {
+        return this.usersService.findOneByUuid(uuid);
     }
 
     @Put(':id')
-    update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-        return this.usersService.update(Number(id), updateUserDto);
+    updateById(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+        return this.usersService.updateById(Number(id), updateUserDto);
+    }
+
+    // Nueva ruta para actualizar por UUID
+    @Put('uuid/:uuid')
+    updateByUuid(@Param('uuid') uuid: string, @Body() updateUserDto: UpdateUserDto) {
+        return this.usersService.updateByUuid(uuid, updateUserDto);
     }
 
     @Delete(':id')
-    remove(@Param('id') id: string) {
-        return this.usersService.remove(Number(id));
+    removeById(@Param('id') id: string) {
+        return this.usersService.removeById(Number(id));
+    }
+
+    // Nueva ruta para eliminar por UUID
+    @Delete('uuid/:uuid')
+    removeByUuid(@Param('uuid') uuid: string) {
+        return this.usersService.removeByUuid(uuid);
     }
 }

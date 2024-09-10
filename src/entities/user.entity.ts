@@ -32,6 +32,7 @@ export class User {
   @Column()
   id_pase: number;
 
-  @Column()
+  @Column({ unique: true })
   uuid: string;
+  // Campo para almacenar UUID
 }
